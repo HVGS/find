@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Dashboard</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 800px;
+  }
+
+  .dashboard-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .dashboard-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .dashboard-item img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-item a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Custom Border Gradients */
+  .dashboard-item:nth-child(1) {
+    border-image-source: linear-gradient(to bottom right, #ff3333, #ffcc00);
+  }
+  .dashboard-item:nth-child(2) {
+    border-image-source: linear-gradient(to bottom right, #00ccff, #663399);
+  }
+  .dashboard-item:nth-child(3) {
+    border-image-source: linear-gradient(to bottom right, #993399, #ff6699);
+  }
+</style>
+</head>
+<body>
+<div class="dashboard">
+  <div class="dashboard-item">
+    <img src="logo1.png" alt="Logo 1">
+    <a href="https://hvgs.github.io/maccas">McDonalds Game</a>
+  </div>
+  <div class="dashboard-item">
+    <img src="logo2.png" alt="Logo 2">
+    <a href="https://hvgs.github.io/periodictable">Periodic Table</a>
+  </div>
+  <div class="dashboard-item">
+    <img src="logo3.png" alt="Logo 3">
+    <a href="https://apps.hvgs.nsw.edu.au/youtubeviewer">HVGS Youtube</a>
+  </div>
+  <!-- Placeholder items -->
+  <div class="dashboard-item"></div>
+  <div class="dashboard-item"></div>
+  <div class="dashboard-item"></div>
+  <div class="dashboard-item"></div>
+</div>
+</body>
+</html>
