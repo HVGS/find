@@ -9,7 +9,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #222222;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,18 +28,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
-    border: 2px solid;
-    border-image-slice: 1;
-    border-width: 5px;
-    border-radius: 15px;
+    background-color: #333333;
+    border-radius: 20px;
     padding: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
   }
 
-  .dashboard-item:hover {
-    transform: translateY(-5px);
+  .dashboard-item:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 25px;
+    z-index: -1;
+  }
+
+  .dashboard-item:hover:before {
+    border: 2px solid rgba(255, 255, 255, 0.5);
   }
 
   .dashboard-item img {
@@ -50,20 +59,20 @@
 
   .dashboard-item a {
     text-decoration: none;
-    color: #333333;
+    color: #ffffff;
     font-weight: bold;
     text-align: center;
   }
 
   /* Custom Border Gradients */
-  .dashboard-item:nth-child(1) {
-    border-image-source: linear-gradient(to bottom right, #ff3333, #ffcc00);
+  .dashboard-item:nth-child(1):before {
+    background: linear-gradient(to bottom right, #ff3333, #ffcc00);
   }
-  .dashboard-item:nth-child(2) {
-    border-image-source: linear-gradient(to bottom right, #00ccff, #663399);
+  .dashboard-item:nth-child(2):before {
+    background: linear-gradient(to bottom right, #00ccff, #663399);
   }
-  .dashboard-item:nth-child(3) {
-    border-image-source: linear-gradient(to bottom right, #993399, #ff6699);
+  .dashboard-item:nth-child(3):before {
+    background: linear-gradient(to bottom right, #993399, #ff6699);
   }
 </style>
 </head>
