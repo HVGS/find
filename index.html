@@ -40,7 +40,7 @@
     transition: border 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .dashboard-item:hover .dashboard-item-border {
+  .dashboard-item-container:hover .dashboard-item-border {
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
@@ -57,9 +57,10 @@
     overflow: hidden;
     transition: transform 0.3s ease;
     border-radius: 20px;
+    z-index: 1;
   }
 
-  .dashboard-item:hover {
+  .dashboard-item-container:hover .dashboard-item {
     transform: scale(1.1);
   }
 
@@ -77,13 +78,13 @@
   }
 
   /* Custom Border Gradients */
-  .dashboard-item:nth-child(1) .dashboard-item-border {
+  .dashboard-item-border:nth-child(1) {
     background: linear-gradient(to bottom right, #ff3333, #ffcc00);
   }
-  .dashboard-item:nth-child(2) .dashboard-item-border {
+  .dashboard-item-border:nth-child(2) {
     background: linear-gradient(to bottom right, #00ccff, #663399);
   }
-  .dashboard-item:nth-child(3) .dashboard-item-border {
+  .dashboard-item-border:nth-child(3) {
     background: linear-gradient(to bottom right, #993399, #ff6699);
   }
 </style>
