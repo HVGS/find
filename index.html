@@ -31,9 +31,10 @@
     background-color: #333333;
     border-radius: 20px;
     padding: 20px;
-    transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
   }
 
   .dashboard-item:before {
@@ -45,11 +46,16 @@
     bottom: -5px;
     border-radius: 25px;
     z-index: -1;
+    transition: all 0.3s ease;
   }
 
   .dashboard-item:hover:before {
     border: 2px solid rgba(255, 255, 255, 0.5);
-    transform: scale(2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .dashboard-item:hover {
+    transform: scale(1.1);
   }
 
   .dashboard-item img {
