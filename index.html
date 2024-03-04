@@ -6,7 +6,7 @@
 <title>Modern Dashboard</title>
 <style>
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #222222;
@@ -26,23 +26,24 @@
   .dashboard-item-container {
     position: relative;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 30px;
+    border: 4px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .dashboard-item-container:hover {
+    border-color: rgba(255, 255, 255, 0.5);
   }
 
   .dashboard-item-border {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
-    border: 2px solid transparent;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .dashboard-item-container:hover .dashboard-item-border {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    z-index: -1;
   }
 
   .dashboard-item {
@@ -51,23 +52,21 @@
     align-items: center;
     justify-content: center;
     background-color: #333333;
-    padding: 20px;
+    padding: 40px 20px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease;
     border-radius: 20px;
-    z-index: 1;
   }
 
-  .dashboard-item-container:hover .dashboard-item {
+  .dashboard-item:hover {
     transform: scale(1.1);
   }
 
   .dashboard-item img {
-    max-width: 80px;
-    max-height: 80px;
-    margin-bottom: 10px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 20px;
   }
 
   .dashboard-item a {
@@ -75,6 +74,7 @@
     color: #ffffff;
     font-weight: bold;
     text-align: center;
+    font-size: 16px;
   }
 
   /* Custom Border Gradients */
