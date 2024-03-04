@@ -23,35 +23,40 @@
     max-width: 800px;
   }
 
+  .dashboard-item-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .dashboard-item-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dashboard-item:hover .dashboard-item-border {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
   .dashboard-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #333333;
-    border-radius: 20px;
     padding: 20px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
-  }
-
-  .dashboard-item:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 25px;
-    z-index: -1;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .dashboard-item:hover:before {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
   }
 
   .dashboard-item:hover {
@@ -72,36 +77,45 @@
   }
 
   /* Custom Border Gradients */
-  .dashboard-item:nth-child(1):before {
+  .dashboard-item:nth-child(1) .dashboard-item-border {
     background: linear-gradient(to bottom right, #ff3333, #ffcc00);
   }
-  .dashboard-item:nth-child(2):before {
+  .dashboard-item:nth-child(2) .dashboard-item-border {
     background: linear-gradient(to bottom right, #00ccff, #663399);
   }
-  .dashboard-item:nth-child(3):before {
+  .dashboard-item:nth-child(3) .dashboard-item-border {
     background: linear-gradient(to bottom right, #993399, #ff6699);
   }
 </style>
 </head>
 <body>
 <div class="dashboard">
-  <div class="dashboard-item">
-    <img src="logo1.png" alt="Logo 1">
-    <a href="https://hvgs.github.io/maccas">McDonalds Game</a>
+  <div class="dashboard-item-container">
+    <div class="dashboard-item-border"></div>
+    <div class="dashboard-item">
+      <img src="logo1.png" alt="Logo 1">
+      <a href="https://hvgs.github.io/maccas">McDonalds Game</a>
+    </div>
   </div>
-  <div class="dashboard-item">
-    <img src="logo2.png" alt="Logo 2">
-    <a href="https://hvgs.github.io/periodictable">Periodic Table</a>
+  <div class="dashboard-item-container">
+    <div class="dashboard-item-border"></div>
+    <div class="dashboard-item">
+      <img src="logo2.png" alt="Logo 2">
+      <a href="https://hvgs.github.io/periodictable">Periodic Table</a>
+    </div>
   </div>
-  <div class="dashboard-item">
-    <img src="logo3.png" alt="Logo 3">
-    <a href="https://apps.hvgs.nsw.edu.au/youtubeviewer">HVGS Youtube</a>
+  <div class="dashboard-item-container">
+    <div class="dashboard-item-border"></div>
+    <div class="dashboard-item">
+      <img src="logo3.png" alt="Logo 3">
+      <a href="https://apps.hvgs.nsw.edu.au/youtubeviewer">HVGS Youtube</a>
+    </div>
   </div>
   <!-- Placeholder items -->
-  <div class="dashboard-item"></div>
-  <div class="dashboard-item"></div>
-  <div class="dashboard-item"></div>
-  <div class="dashboard-item"></div>
+  <div class="dashboard-item-container"></div>
+  <div class="dashboard-item-container"></div>
+  <div class="dashboard-item-container"></div>
+  <div class="dashboard-item-container"></div>
 </div>
 </body>
 </html>
