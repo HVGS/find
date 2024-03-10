@@ -123,7 +123,9 @@
     function submitForm(event) {
       event.preventDefault();
       var query = document.getElementById('searchInput').value.trim().toLowerCase().replace(/\s+/g, '');
-      if (query !== '') {
+      if (query === 'youtube') {
+        window.location.href = 'https://legacy.hvgs.nsw.edu.au/youtubeviewer';
+      } else if (query !== '') {
         window.location.href = 'https://hvgs.github.io/' + encodeURIComponent(query);
       }
     }
