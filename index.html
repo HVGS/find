@@ -1,129 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Dashboard</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .dashboard {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    max-width: 800px;
-  }
+  <meta charset="UTF-8">
+  <title>HVGS Search</title>
+  <style>
+    ul {
+      list-style-type: none;
+      overflow: hidden;
+    }
 
-  .dashboard-item-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 30px;
-    border: 4px solid transparent;
-    transition: border-color 0.3s ease;
-  }
+    li {
+      float: right;
+    }
 
-  .dashboard-item-container:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-  }
+    li a {
+      color: #000;
+      display: block;
+      text-align: center;
+      padding: 10px 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-  .dashboard-item-border {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 30px;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
-    z-index: -1;
-    transition: background 0.3s ease;
-    height: 500px;
-    width: 500px;
-  }
+    li a:hover {
+      text-decoration: underline;
+    }
 
-  .dashboard-item-container:hover .dashboard-item-border {
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
-  }
+    .grid {
+      height: 23px;
+      position: relative;
+      bottom: 4px;
+    }
 
-  .dashboard-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #333333;
-    padding: 40px 20px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-  }
+    .signbutton {
+      background-color: #4885ed;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 7px 10px;
+      position: relative;
+      bottom: 7px;
+      font-weight: bold;
+    }
 
-  .dashboard-item:hover {
-    transform: scale(1.1);
-  }
+    .logo {
+      margin-top: 200px;
+      margin-bottom: 20px;
+      height: 180px;
+      width: 200px;
+    }
 
-  .dashboard-item img {
-    max-width: 100px;
-    max-height: 100px;
-    margin-bottom: 20px;
-  }
+    .bar {
+      margin: 0 auto;
+      width: 575px;
+      border-radius: 30px;
+      border: 1px solid #dcdcdc;
+    }
 
-  .dashboard-item a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    text-align: center;
-    font-size: 16px;
-  }
+    .bar:hover {
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+    }
 
-  /* Custom Border Gradients */
-  .dashboard-item-border:nth-child(1) {
-    background: linear-gradient(to bottom right, #ff3333, #ffcc00);
-  }
-  .dashboard-item-border:nth-child(2) {
-    background: linear-gradient(to bottom right, #00ccff, #663399);
-  }
-  .dashboard-item-border:nth-child(3) {
-    background: linear-gradient(to bottom right, #993399, #ff6699);
-  }
-</style>
+    .bar:focus-within {
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+      outline: none;
+    }
+
+    .searchbar {
+      height: 45px;
+      border: none;
+      width: 500px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .voice {
+      height: 20px;
+      position: relative;
+      top: 5px;
+      left: 10px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .button {
+      background-color: #f5f5f5;
+      border: none;
+      color: #707070;
+      font-size: 15px;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .button:hover {
+      border: 1px solid #c8c8c8;
+      padding: 9px 19px;
+      color: #808080;
+    }
+
+    .button:focus {
+      border: 1px solid #4885ed;
+      padding: 9px 19px;
+    }
+  </style>
 </head>
 <body>
-<div class="dashboard">
-  <div class="dashboard-item-container">
-    <div class="dashboard-item-border"></div>
-    <div class="dashboard-item">
-      <img src="logo1.png" alt="Logo 1">
-      <a href="https://hvgs.github.io/maccas">McDonalds Game</a>
+  <center>
+    <div class="logo">
+      <img alt="Google" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Hunter_Valley_Grammar_School_logo.png">
     </div>
-  </div>
-  <div class="dashboard-item-container">
-    <div class="dashboard-item-border"></div>
-    <div class="dashboard-item">
-      <img src="logo2.png" alt="Logo 2">
-      <a href="https://hvgs.github.io/periodictable">Periodic Table</a>
+    <div class="bar">
+      <form id="searchForm" onsubmit="submitForm(event)">
+        <input class="searchbar" type="text" title="Search" id="searchInput">
+      </form>
     </div>
-  </div>
-  <div class="dashboard-item-container">
-    <div class="dashboard-item-border"></div>
-    <div class="dashboard-item">
-      <img src="logo3.png" alt="Logo 3">
-      <a href="https://apps.hvgs.nsw.edu.au/youtubeviewer">HVGS Youtube</a>
-    </div>
-  </div>
-  <!-- Placeholder items -->
-  <div class="dashboard-item-container"></div>
-  <div class="dashboard-item-container"></div>
-  <div class="dashboard-item-container"></div>
-  <div class="dashboard-item-container"></div>
-</div>
+  </center>
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      var query = document.getElementById('searchInput').value.trim().toLowerCase().replace(/\s+/g, '');
+      if (query !== '') {
+        window.location.href = 'https://hvgs.github.io/' + encodeURIComponent(query);
+      }
+    }
+  </script>
 </body>
 </html>
